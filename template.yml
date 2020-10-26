@@ -30,3 +30,9 @@ Resources:
       Policies:
         # Give Lambda basic execution Permission to the helloFromLambda
         - AWSLambdaBasicExecutionRole
+      Events:
+        HelloSam:
+          Type: Api
+          Properties:
+            Path: /
+            Method: get
