@@ -3,7 +3,7 @@
 
 # The AWSTemplateFormatVersion identifies the capabilities of the template
 # https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure.html
-AWSTemplateFormatVersion: 2010-09-09
+AWSTemplateFormatVersion: '2010-09-09'
 Description: >-
   hello-sam
 
@@ -26,13 +26,16 @@ Resources:
       Runtime: nodejs12.x
       MemorySize: 128
       Timeout: 100
+      # Role: arn:aws:iam::330959657584:role/service-role/myFirstRole
       Description: A Lambda function that returns a static string.
       Policies:
         # Give Lambda basic execution Permission to the helloFromLambda
         - AWSLambdaBasicExecutionRole
+        - AmazonDynamoDBFullAccess
       Events:
         HelloSam:
           Type: Api
           Properties:
-            Path: /
+            Path: '/'
             Method: get
+            
