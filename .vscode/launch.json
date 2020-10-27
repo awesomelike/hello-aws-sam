@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "type": "aws-sam",
+      "request": "direct-invoke",
+      "name": "hello-sam:helloFromLambdaFunction",
+      "invokeTarget": {
+        "target": "template",
+        "templatePath": "template.yml",
+        "logicalId": "helloFromLambdaFunction"
+      },
+      "lambda": {
+        "payload": {},
+        "environmentVariables": {}
+      }
+    }
+  ]
+}

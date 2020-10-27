@@ -36,6 +36,17 @@ Resources:
         HelloSam:
           Type: Api
           Properties:
-            Path: '/'
-            Method: get
-            
+            Path: '/{proxy+}'
+            Method: any
+        HelloSamRoot:
+          Type: Api
+          Properties:
+            Path: /
+            Method: any
+  getPostById:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: src/handlers/getPostById.handler
+      Runtime: nodejs12.x
+  
+  
